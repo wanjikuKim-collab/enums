@@ -1,6 +1,13 @@
+#[derive(Debug)]
 enum IpAddrKind {
     V4(String),
     v6([u8; 16]),
+}
+
+impl IpAddrKind {
+    fn some_function(&self){
+        println!("I did this");
+    }    
 }
 
 fn main() {
@@ -11,4 +18,6 @@ fn main() {
     0x00, 0x63, 0x00, 0x00,
     0x00, 0xFE, 0xFB, 0xFB
     ]);
+
+    println!("{:#?},{:?}", six, six.some_function());
 }
